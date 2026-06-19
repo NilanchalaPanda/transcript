@@ -58,6 +58,8 @@ Thumbs.db
 !tsconfig.json
 *.txt
 !requirements.txt
+!requirements-ai.txt
+!requirements-core.txt
 !README.txt
 
 # Temporary files
