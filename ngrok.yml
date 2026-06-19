@@ -1,0 +1,22 @@
+version: "2"
+authtoken: ${NGROK_AUTHTOKEN}
+
+# Tunnels configuration
+# Exposing frontend only (free tier allows 1 tunnel)
+# Frontend proxies API requests to backend via Vite proxy
+tunnels:
+  react-frontend:
+    addr: 3000
+    proto: http
+    inspect: true
+
+# Region selection (choose closest to your team)
+# Options: us, eu, ap, au, sa, jp, in
+region: us
+
+# Connection settings
+web_addr: localhost:4040
+console_ui: true
+log_level: info
+log_format: json
+log: /tmp/ngrok.log

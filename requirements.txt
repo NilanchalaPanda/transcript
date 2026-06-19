@@ -1,0 +1,32 @@
+# Requirements for Hugging Face Spaces
+Flask==3.0.0
+flask-cors==4.0.0
+Werkzeug==3.0.1
+gunicorn==21.2.0
+
+# PyTorch (CPU version for faster build on HF Spaces)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.0+cpu
+torchaudio==2.1.0+cpu
+
+# Audio processing
+librosa==0.10.1
+soundfile==0.12.1
+numba==0.58.1
+
+# Whisper and alignment (version compatible with WhisperX)
+openai-whisper==20231117
+faster-whisper>=1.1.1
+
+# Speaker diarization
+pyannote.audio==3.1.1
+
+# WhisperX (will install its own compatible dependencies)
+git+https://github.com/m-bain/whisperx.git
+
+# Basic dependencies
+numpy>=1.24.0,<2.0.0
+pandas
+scipy
+transformers
+ctranslate2

@@ -1,0 +1,21 @@
+[Unit]
+Description=Rani Timestamp Generator Backend
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+
+WorkingDirectory=/opt/rani
+
+EnvironmentFile=/opt/rani/.env
+
+ExecStart=/opt/rani/venv/bin/gunicorn \
+          -c deploy/gunicorn.conf.py \
+          app:app
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
